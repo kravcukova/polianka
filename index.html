@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="sk">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Reštaurácia v Tatranskej Polianke. Otváracie hodiny, poloha a telefonický kontakt.">
+    <title>Reštaurácia Tatranská Polianka</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="#uvod" aria-label="Reštaurácia Tatranská Polianka, úvod">
+          <img src="LOGO, tatran.png" alt="Reštaurácia Tatranská Polianka">
+        </a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Otvoriť navigáciu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="primary-nav" id="primary-nav" aria-label="Hlavná navigácia">
+          <a href="#onas" data-route-link="onas">O nás</a>
+          <a href="#menu" data-route-link="menu">Jedálny lístok a menu</a>
+          <a href="#galeria" data-route-link="galeria">Fotogaléria</a>
+          <a href="#kontakt" data-route-link="kontakt">Kontakt a rezervácia</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="page page-home" id="uvod" data-page="uvod" aria-label="Úvod">
+        <div class="home-content">
+        <div class="carousel" aria-roledescription="karusel" aria-label="Fotografie reštaurácie" data-carousel>
+          <div class="carousel-track">
+            <img class="carousel-image is-active" src="img/interier_polianka.jpg" alt="Interiér reštaurácie Tatranská Polianka" fetchpriority="high">
+            <img class="carousel-image" src="img/velicke.jpg" alt="Tatranská príroda v okolí reštaurácie" loading="lazy" aria-hidden="true">
+            <img class="carousel-image" src="img/tatry_luka.jpg" alt="Horská lúka vo Vysokých Tatrách" loading="lazy" aria-hidden="true">
+          </div>
+
+          <button class="carousel-control carousel-control--previous" type="button" aria-label="Predchádzajúca fotografia" data-direction="-1">
+            <span aria-hidden="true">&#8592;</span>
+          </button>
+          <button class="carousel-control carousel-control--next" type="button" aria-label="Nasledujúca fotografia" data-direction="1">
+            <span aria-hidden="true">&#8594;</span>
+          </button>
+
+          <div class="carousel-pagination" aria-label="Výber fotografie">
+            <button class="carousel-dot is-active" type="button" aria-label="Zobraziť fotografiu 1" aria-current="true" data-index="0"></button>
+            <button class="carousel-dot" type="button" aria-label="Zobraziť fotografiu 2" data-index="1"></button>
+            <button class="carousel-dot" type="button" aria-label="Zobraziť fotografiu 3" data-index="2"></button>
+            <span class="carousel-count" aria-live="polite"><span data-current-slide>1</span> z 3</span>
+          </div>
+        </div>
+
+        <a class="reservation-button" href="tel:+421949212446">
+          <span>Rezervácia</span>
+          <span class="reservation-arrow" aria-hidden="true">&#8594;</span>
+        </a>
+
+        <section class="location-preview" aria-label="Poloha reštaurácie">
+          <div class="location-photo">
+            <img src="img/victoria-shes-mr1o568mdEc-unsplash.jpg" alt="Jedlo servírované v miske" loading="lazy">
+          </div>
+          <div class="map-frame">
+            <iframe
+              title="Mapa: Tatranská Polianka 1969/21"
+              src="https://maps.google.com/maps?q=Tatransk%C3%A1%20Polianka%201969%2F21&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </section>
+        </div>
+      </section>
+
+      <section class="page page-interior" id="onas" data-page="onas" aria-labelledby="about-title" hidden>
+        <div class="page-heading">
+          <p class="eyebrow">Tatranská Polianka</p>
+          <h1 id="about-title">O nás</h1>
+        </div>
+        <figure class="about-image about-image--wide">
+          <img src="img/interier_polianka.jpg" alt="Interiér reštaurácie v Tatranskej Polianke" loading="lazy">
+        </figure>
+        <div class="about-copy">
+          <p class="about-quote">„Naša reštaurácia v Tatranskej Polianke vám ponúka poctivé domáce jedlá pripravené z lokálnych surovín. Nájdete u nás príjemné prostredie, kľudnú atmosféru pre stretnutia a plné zázemie pre rodiny s deťmi.“</p>
+          <h2>Informácie o kapacite &amp; vybavenie</h2>
+          <div class="about-facts">
+            <p><strong>Kapacita:</strong> 50 miest v interiéri + 30 miest na letnej terase</p>
+            <p><strong>Vybavenie:</strong> Detské stoličky, detský kútik, bezplatné parkovanie priamo pri objekte</p>
+          </div>
+        </div>
+        <figure class="about-image about-image--wide about-image--last">
+          <img src="img/tatry_luka.jpg" alt="Príroda v okolí Tatranskej Polianky" loading="lazy">
+        </figure>
+      </section>
+
+      <section class="page page-interior menu-page" id="menu" data-page="menu" aria-labelledby="menu-title" hidden>
+        <div class="page-heading page-heading--ruled">
+          <span aria-hidden="true"></span>
+          <h1 id="menu-title">Jedálny lístok</h1>
+          <span aria-hidden="true"></span>
+        </div>
+
+        <nav class="menu-categories" aria-label="Kategórie jedálneho lístka">
+          <a href="#menu-tradicne">Tradičné a sýte jedlá</a>
+          <a href="#menu-deti">Detské menu</a>
+          <a href="#menu-napoje">Káva, nápoje a dezerty</a>
+        </nav>
+
+        <section class="menu-section" id="menu-tradicne" aria-labelledby="traditional-title">
+          <h2 id="traditional-title">Tradičné a sýte jedlá</h2>
+          <div class="menu-grid">
+            <article class="menu-item">
+              <img src="img/victoria-shes-mr1o568mdEc-unsplash.jpg" alt="Jedlo servírované v miske" loading="lazy">
+              <div><h3>Sýty tatranský kotlíkový guláš <span>(400 g)</span></h3><p>Hovädzie mäso, domáce knedle, cibuľka.</p><p class="menu-meta">Cena: 8,90 €</p><p class="menu-meta">Alergény: 1, 3, 7</p></div>
+            </article>
+            <article class="menu-item">
+              <img src="img/allan-lainez-XB4LDVsKVQM-unsplash.jpg" alt="Jedlo pripravené v reštaurácii" loading="lazy">
+              <div><h3>Bryndzové halušky so slaninkou <span>(350 g)</span></h3><p>Tradičné zemiakové halušky, syrová ovčia bryndza, opečená slaninka.</p><p class="menu-meta">Cena: 7,90 €</p><p class="menu-meta">Alergény: 1, 3, 7</p></div>
+            </article>
+            <article class="menu-item">
+              <img src="img/anthony-espinosa-6iqpLKqeaE0-unsplash.jpg" alt="Jedlo pripravené v reštaurácii" loading="lazy">
+              <div><h3>Vyprážaný kurací rezeň <span>(200 g)</span></h3><p>Chrumkavý kurací rezeň, varené zemiaky s maslom a petržlenovou vňaťou.</p><p class="menu-meta">Cena: 8,50 €</p><p class="menu-meta">Alergény: 1, 3, 7</p></div>
+            </article>
+            <article class="menu-item">
+              <img src="img/wenceslao-moya-grondona-de-luca-6qVXypBghyg-unsplash.jpg" alt="Jedlo pripravené v reštaurácii" loading="lazy">
+              <div><h3>Strapačky s kyslou kapustou <span>(350 g)</span></h3><p>Zemiakové halušky, dusená kyslá kapusta, opečená slaninka.</p><p class="menu-meta">Cena: 7,50 €</p><p class="menu-meta">Alergény: 1, 3</p></div>
+            </article>
+          </div>
+        </section>
+
+        <section class="menu-section" id="menu-deti" aria-labelledby="kids-title">
+          <h2 id="kids-title">Detské menu</h2>
+          <div class="menu-grid">
+            <article class="menu-item">
+              <img src="img/victoria-shes-mr1o568mdEc-unsplash.jpg" alt="Detské jedlo servírované v miske" loading="lazy">
+              <div><h3>Detský kurací rezeň s kašou <span>(150 g)</span></h3><p>Kuracie prsia v strúhanke, zemiaková kaša, malý mrkvový šalátik.</p><p class="menu-meta">Cena: 5,50 €</p><p class="menu-meta">Alergény: 1, 3, 7</p></div>
+            </article>
+            <article class="menu-item">
+              <img src="img/anthony-espinosa-6iqpLKqeaE0-unsplash.jpg" alt="Detské jedlo pripravené v reštaurácii" loading="lazy">
+              <div><h3>Detské špagety s paradajkovou omáčkou <span>(200 g)</span></h3><p>Špagety dusené v paradajkovej omáčke, strúhaný syr. Vyrobené z čerstvých domácich surovín.</p><p class="menu-meta">Cena: 4,00 €</p><p class="menu-meta">Alergény: 1, 3, 7</p></div>
+            </article>
+          </div>
+        </section>
+
+        <section class="menu-section" id="menu-napoje" aria-labelledby="drinks-title">
+          <h2 id="drinks-title">Káva, nápoje a dezerty</h2>
+          <div class="menu-lists">
+            <div class="menu-list">
+              <h3>Teplé nápoje &amp; káva</h3>
+              <p>Espresso / Lungo (8 g) <span>2,20 €</span></p>
+              <p>Cappuccino / Café Latte (8 g, 150 ml mlieko) <span>2,80 €</span><small>Alergény: 7</small></p>
+              <p>Bylinkový tatranský čaj (0,3 l) <span>3,50 €</span></p>
+            </div>
+            <div class="menu-list">
+              <h3>Nápoje</h3>
+              <p>Čapované pivo (0,3 l / 0,5 l) <span>2,00 € / 2,50 €</span></p>
+              <p>Kofola čapovaná (0,3 l / 0,5 l) <span>1,50 € / 2,30 €</span></p>
+              <p>Pramenitá voda / minerálka (0,33 l) <span>1,80 €</span></p>
+            </div>
+            <div class="menu-list menu-list--desserts">
+              <h3>Tradičné domáce dezerty</h3>
+              <p>Domáca škoricová bublanina (120 g)<small>Nadýchaný koláč s čerstvým ovocím a posýpkou.</small><span>2,50 € · Alergény: 1, 3, 7</span></p>
+              <p>Tradičné tatranské jabĺčkovo-medové štrúdle (120 g)<small>Domáce cesto, škoricové jablká, mletý mak a hrozienka.</small><span>3,20 € · Alergény: 1, 3, 7, 8</span></p>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <section class="page page-interior gallery-page" id="galeria" data-page="galeria" aria-labelledby="gallery-title" hidden>
+        <h1 class="visually-hidden" id="gallery-title">Fotogaléria</h1>
+        <div class="gallery-grid">
+          <img src="img/interier_polianka.jpg" alt="Interiér reštaurácie" loading="lazy">
+          <img src="img/victoria-shes-mr1o568mdEc-unsplash.jpg" alt="Jedlo servírované v miske" loading="lazy">
+          <img src="img/velicke.jpg" alt="Pohľad na tatranské štíty" loading="lazy">
+          <img src="img/tatry_luka.jpg" alt="Horská lúka vo Vysokých Tatrách" loading="lazy">
+          <img src="img/tatry_obloha.jpg" alt="Večerná obloha nad Tatrami" loading="lazy">
+        </div>
+      </section>
+
+      <section class="page page-interior contact-page" id="kontakt" data-page="kontakt" aria-labelledby="reservation-title" hidden>
+        <div class="reservation-layout">
+          <form class="reservation-form" data-reservation-form>
+            <h1 id="reservation-title">Rezervácia stola</h1>
+            <label for="guest-name">Meno a Priezvisko</label>
+            <input id="guest-name" name="name" type="text" autocomplete="name" required>
+
+            <label for="guest-phone">Telefónne číslo</label>
+            <input id="guest-phone" name="phone" type="tel" autocomplete="tel" required>
+
+            <label for="guest-count">Počet osôb</label>
+            <select id="guest-count" name="guests">
+              <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option>
+            </select>
+
+            <label class="checkbox-label" for="child-chair"><input id="child-chair" name="child-chair" type="checkbox"> Detská stolička</label>
+
+            <label for="reservation-notes">Poznámky</label>
+            <textarea id="reservation-notes" name="notes" rows="5"></textarea>
+
+            <button class="submit-button" type="submit">Odoslať</button>
+            <p class="form-status" data-form-status role="status" aria-live="polite"></p>
+          </form>
+
+          <div class="reservation-phone">
+            <p>alebo cez telefónne číslo</p>
+            <a href="tel:+421949212446"><span aria-hidden="true">&#9742;</span> +421 949 212 446</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <section class="footer-column" aria-labelledby="hours-title">
+          <h2 id="hours-title">Otváracie hodiny</h2>
+          <p>Pondelok - Piatok od 07:30 do 19:00</p>
+          <p>Sobota - Nedeľa od 07:00 do 18:00</p>
+        </section>
+
+        <section class="footer-column" aria-labelledby="location-title">
+          <h2 id="location-title">Poloha</h2>
+          <p>Tatranská Polianka 1969/21</p>
+          <p>Slovensko</p>
+        </section>
+
+        <section class="footer-column" aria-labelledby="phone-title">
+          <h2 id="phone-title">Telefónne číslo</h2>
+          <a href="tel:+421949212446">+421 949 212 446</a>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>
