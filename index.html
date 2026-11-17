@@ -192,8 +192,14 @@
             <label for="guest-phone">Telefónne číslo</label>
             <input id="guest-phone" name="phone" type="tel" autocomplete="tel" required>
 
+            <label for="reservation-date">Dátum rezervácie</label>
+            <input id="reservation-date" name="date" type="date" required>
+
+            <label for="reservation-time">Čas rezervácie</label>
+            <input id="reservation-time" name="time" type="time" required>
+
             <label for="guest-count">Počet osôb</label>
-            <select id="guest-count" name="guests">
+            <select id="guest-count" name="guests" required>
               <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option>
             </select>
 
@@ -202,15 +208,34 @@
             <label for="reservation-notes">Poznámky</label>
             <textarea id="reservation-notes" name="notes" rows="5"></textarea>
 
-            <button class="submit-button" type="submit">Odoslať</button>
+            <button class="submit-button" type="submit">Potvrdiť rezerváciu</button>
             <p class="form-status" data-form-status role="status" aria-live="polite"></p>
           </form>
+
+          <dialog class="reservation-dialog" data-reservation-dialog aria-labelledby="reservation-dialog-title">
+            <div class="reservation-dialog-content">
+              <p class="eyebrow">Tatranská Polianka</p>
+              <h2 id="reservation-dialog-title">Rezervácia uložená</h2>
+              <p data-reservation-message></p>
+              <p class="reservation-dialog-notice">Rezervácia je uložená iba v tomto prehliadači a nebola odoslaná do reštaurácie.</p>
+              <dl class="reservation-summary">
+                <div><dt>Dátum</dt><dd data-reservation-date></dd></div>
+                <div><dt>Čas</dt><dd data-reservation-time></dd></div>
+                <div><dt>Počet osôb</dt><dd data-reservation-guests></dd></div>
+              </dl>
+              <button class="submit-button" type="button" data-close-reservation-dialog>Zavrieť</button>
+            </div>
+          </dialog>
 
           <div class="reservation-phone">
             <p>alebo cez telefónne číslo</p>
             <a href="tel:+421949212446"><span aria-hidden="true">&#9742;</span> +421 949 212 446</a>
           </div>
         </div>
+        <section class="saved-reservations" aria-labelledby="saved-reservations-title">
+          <h2 id="saved-reservations-title">Uložené rezervácie</h2>
+          <div data-reservation-list aria-live="polite"></div>
+        </section>
       </section>
     </main>
 
