@@ -1,0 +1,9 @@
+{
+  "forwardPorts": [8000],
+  "portsAttributes": {
+    "8000": {
+      "label": "Website"
+    }
+  },
+  "postStartCommand": "bash -c 'if ! pgrep -f \"^python3 -m http.server 8000$\" >/dev/null; then (python3 -m http.server 8000 > /tmp/polianka-http-server.log 2>&1 < /dev/null &); fi'"
+}
