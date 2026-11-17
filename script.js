@@ -1,3 +1,17 @@
+const splashScreen = document.querySelector("[data-splash-screen]");
+
+if (splashScreen) {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    splashScreen.remove();
+  } else {
+    splashScreen.addEventListener("animationend", (event) => {
+      if (event.target === splashScreen) {
+        splashScreen.remove();
+      }
+    });
+  }
+}
+
 const carousel = document.querySelector("[data-carousel]");
 const navToggle = document.querySelector(".nav-toggle");
 const primaryNav = document.querySelector(".primary-nav");

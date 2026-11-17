@@ -28,6 +28,60 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+.splash-screen {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: #000;
+  animation: splash-fade-out 2.5s ease forwards;
+}
+
+.splash-logo {
+  display: block;
+  width: min(58vw, 320px);
+  max-height: 42vh;
+  object-fit: contain;
+  animation: splash-logo-appear 2.5s ease both;
+}
+
+@keyframes splash-logo-appear {
+  0% {
+    opacity: 0;
+    transform: scale(0.88);
+  }
+
+  28% {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+
+  48%,
+  82% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+@keyframes splash-fade-out {
+  0%,
+  80% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
 a {
   color: inherit;
 }
@@ -459,6 +513,15 @@ a {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .splash-screen,
+  .splash-logo {
+    animation: none;
+  }
+
+  .splash-screen {
+    display: none;
   }
 
   *,
